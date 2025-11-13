@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="barre">
+        <div class="nav-container">
+            <a href="#" class="nav-item active" data-period="current" onclick="showMenu()">🌍 Temps Réel</a>
+            <a href="#" class="nav-item" data-period="dawn" onclick="showMenu()">🌅 Aube</a>
+            <a href="#" class="nav-item" data-period="day" onclick="showMenu()">☀️ Jour</a>
+            <a href="#" class="nav-item" data-period="dusk" onclick="showMenu()">🌆 Crépuscule</a>
+            <a href="#" class="nav-item" data-period="night" onclick="showMenu()">🌙 Nuit</a>
+        </div>
+        <i class="fa-solid fa-bars" id="menuBtn" onclick="showMenu()"></i>
+    </nav>
+    <div class="current-period" id="currentPeriod">Période actuelle : Jour</div>
+    <button class="button" onclick="Sound()">Activer le Son</button>
+    <div class="analogique">
+        <div class="hour hand" id="hour"></div>
+        <div class="minute hand" id="minute"></div>
+        <div class="seconds hand" id="seconds"></div>
+        <img src="clock template.svg" alt="clock">
+    </div>
+    <div class="numerique">
+        <div id="hr"></div>
+        <span>:</span>
+        <div id="min"></div>
+        <span>:</span>
+        <div id="sec"></div>
+        <span class="period">AM</span>
+        </div>
+    <div class="light-effects" id="lightEffects">
+        <div class="sun" id="sun"></div>
+        <div class="moon" id="moon"></div>
+        <div class="stars" id="stars"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
