@@ -20,6 +20,36 @@
     </nav>
     <div class="current-period" id="currentPeriod">Période actuelle : Jour</div>
     <button class="button" onclick="Sound()">Activer le Son</button>
+    <div class="select-menu">
+        <div class="select-region">
+            <span class="select-btn">Select Region</span>
+            <span><i class="fa-solid fa-chevron-down" id="fleche"></i></span>
+        </div>
+        <ul class="regions">
+            <li class="item" data-timezone="local">
+                <span class="checkbox"><i class="fa-thin fa-square-check"></i></span>
+                <span class="item-text">Local Time</span>
+            </li>
+            <li class="item" data-timezone="Europe/London">
+                <span class="checkbox"><i class="fa-thin fa-square-check"></i></span>
+                <span class="item-text">UTC+0 (GMT) - London</span>
+            </li>
+            <li class="item" data-timezone="America/New_York">
+                <span class="checkbox"><i class="fa-thin fa-square-check"></i></span>
+                <span class="item-text">UTC-5 (EST) - New York</span>
+            </li>
+            <li class="item" data-timezone="Asia/Tokyo">
+                <span class="checkbox"><i class="fa-thin fa-square-check"></i></span>
+                <span class="item-text">UTC+9 - Tokyo</span>
+            </li>
+        </ul>    
+    </div>
+    <div class="date-container">
+        <span class="mois"></span>
+        <span class="jour-semaine"></span>
+        <span class="jour-mois"></span>
+        <span class="annee"></span>
+    </div>
     <div class="analogique">
         <div class="hour hand" id="hour"></div>
         <div class="minute hand" id="minute"></div>
