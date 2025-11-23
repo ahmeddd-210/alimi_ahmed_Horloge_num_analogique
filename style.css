@@ -524,3 +524,209 @@ body.night-mode .date-container {
 body.night-mode .jour-semaine {
     color: #9b59b6;
 }
+
+@media only screen and (max-width: 1130px) {
+    body {
+        padding-top: 100px;
+    }
+    
+    .analogique {
+        width: 280px;
+        height: 280px;
+        margin-left: 50px;
+    }
+    
+    .numerique {
+        width: 25em;
+        margin-right: 50px;
+    }
+    
+    .numerique div {
+        font-size: 2em;
+        width: 2.8em;
+    }
+    
+    .numerique span {
+        font-size: 2em;
+    }
+    .hour {
+        height: 60px;
+        width: 8px;
+        top: 80px;
+    }
+    
+    .minute {
+        height: 70px;
+        width: 4px;
+        top: 70px;
+    }
+    
+    .seconds {
+        height: 80px;
+        width: 2px;
+        top: 60px;
+    }
+    .date-container{
+        transform: translateX(100px);
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .barre {
+        padding: 10px 0;
+    }
+    .current-period{
+        top: 6px;
+        margin-top: 65px;
+        font-size: 1rem;
+    }
+    .analogique {
+        width: 200px;
+        height: 200px;
+        margin-left: 50px;
+    }
+    
+    .numerique {
+        width: 20em;
+        margin-right: 50px;
+    }
+    
+    .hour {
+        height: 45px;
+        width: 8px;
+        top: 55px;
+    }
+    
+    .minute {
+        height: 55px;
+        width: 4px;
+        top: 45px;
+    }
+    
+    .seconds {
+        height: 65px;
+        width: 2px;
+        top: 36px;
+    }
+    .date-container {
+        transform: translateX(145px);
+    }
+    
+}
+@media only screen  and (max-width:760px){
+    .current-period{
+        top: 70px;
+        margin-top: 60px;
+        font-size: 1rem;
+    }
+    .button{
+        top: 69px;
+        margin-top: 65px;
+    }
+    .numerique {
+        width: 15em;
+        margin-right: 50px;
+    }
+    .select-menu {
+        transform: translateY(50px);
+    }
+}
+@media only screen  and (max-width:600px){
+    .numerique {
+        width: 15em;
+        margin-right: 10px;
+    }
+    .analogique {
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+    }
+    .current-period{
+        transform: translateX(-250px);
+    }
+    
+
+}
+@media only screen and (max-width: 500px) {
+    #menuBtn{
+        display: block;
+    }
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 1002;
+        background: rgba(255, 255, 255);
+    }
+    .nav-container.active {
+        display: flex;
+        z-index: 1002;
+    }
+    .nav-item {
+        margin-right: 50px;
+        margin-bottom: 10px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        z-index: 1003;
+    }
+    .button{
+        top: 5px;
+        margin-top: 50px;
+    }
+    .current-period{
+        top: 5px;
+        margin-top: 50px;
+        transform: translateX(-200px);
+        font-size: 1rem;
+    }
+    .analogique {
+        width: 180px;
+        height: 180px;
+        border-width: 8px;
+        margin: 30px auto 15px auto;
+        top: 150px;
+    }
+    .numerique {
+        width: 16em;
+        height: 4.5em;
+        margin: 30px auto 15px auto;
+        top: 390px;
+        right:10px;
+        left: 50px;
+    }
+    .period{
+        top: -25px;
+    }
+    .hour {
+        height: 35px;
+        width: 6px;
+        top: 55px;
+    }
+    .minute {
+        height: 45px;
+        width: 3px;
+        top: 45px;
+    }
+    .seconds {
+        height: 55px;
+        width: 2px;
+        top: 35px;
+    }
+    .select-menu {
+        transform: translateY(-18px);
+        z-index: 990 !important;
+    }
+    .date-container{
+        position: fixed;
+        transform: translateY(150px);
+        transform: translateX(160px);
+        top: auto;
+        right: auto;
+    }
+}
