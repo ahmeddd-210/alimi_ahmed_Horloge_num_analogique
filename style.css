@@ -1,3 +1,4 @@
+/* Réinitialisation des styles par défaut */
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
     transition: all 1.5s ease;
 }
 
+/* Styles de base pour le corps de la page */
 body{
     display: flex;
     justify-content: center;
@@ -16,6 +18,7 @@ body{
     flex-direction:column;
 }
 
+/* Styles pour le bouton de contrôle du son */
 .button{
     border-radius: 10px;
     font-size: 1.2rem;
@@ -42,9 +45,12 @@ body{
     
 }
 
+/* Transition spécifique pour l'aiguille des secondes */
 #seconds {
     transition: none;
 }
+
+/* Styles pour les différents modes (aube, jour, crépuscule, nuit) */
 body.dawn-mode {
     background: linear-gradient(to bottom, #ffcc80, #ffeb3b, #81d4fa);
     color: #5d4037;
@@ -65,6 +71,7 @@ body.night-mode {
     color: #ecf0f1;
 }
 
+/* Styles pour la barre de navigation */
 .barre {
     position: fixed;
     top: 0;
@@ -115,6 +122,7 @@ body.night-mode {
     box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
 }
 
+/* Styles pour l'affichage de la période actuelle */
 .current-period {
     position: fixed;
     top: 80px;
@@ -134,6 +142,7 @@ body.night-mode {
     max-width: 90%;
 }
 
+/* Styles pour l'horloge analogique */
 .analogique{
     width:320px;
     height: 320px;
@@ -151,6 +160,7 @@ body.night-mode {
     transition: all 1.5s ease; 
 }
 
+/* Styles de l'horloge analogique selon les différents modes */
 body.dawn-mode .analogique {
     background: rgba(160, 139, 70, 0.9);
     border-color: #ff9800;
@@ -177,6 +187,8 @@ body.night-mode .analogique {
     object-fit: cover;
     pointer-events: none;
 }
+
+/* Styles pour les aiguilles de l'horloge */
 .hand{
     position: absolute;
     background-color: azure;
@@ -204,10 +216,12 @@ body.night-mode .analogique {
     transition: transform 0.2s cubic-bezier(.4,2.08,.55,.44);
 }
 
+/* Couleurs de l'aiguille des secondes selon les modes */
 body.dawn-mode .seconds { background: #ff9800; }
 body.dusk-mode .seconds { background: #ff8a65; }
 body.night-mode .seconds { background: #9b59b6; }
 
+/* Styles pour l'horloge numérique */
 .numerique{
   width: 31.25em;
   height: 8em;
@@ -239,6 +253,7 @@ body.night-mode .seconds { background: #9b59b6; }
   transition: all 1.5s ease;
 }
 
+/* Styles de l'horloge numérique selon les modes */
 body.dawn-mode .numerique div {
     background-color: #ffcc80;
     color: #5d4037;
@@ -278,6 +293,7 @@ body.dawn-mode .period { color: #ff9800; }
 body.dusk-mode .period { color: #ff8a65; }
 body.night-mode .period { color: #9b59b6; }
 
+/* Couleurs du texte de période selon les modes */
 body.dawn-mode .current-period { color: #ff9800; }
 body.dusk-mode .current-period { color: #ff8a65; }
 body.night-mode .current-period { color: #9b59b6; }
@@ -329,11 +345,13 @@ body.night-mode .current-period { color: #9b59b6; }
     animation: twinkle 4s infinite;
 }
 
+/* Animation de scintillement des étoiles */
 @keyframes twinkle {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
 
+/* Styles pour le bouton menu en version mobile */
 #menuBtn{
     font-size: 30px;
     cursor:pointer;
@@ -341,6 +359,8 @@ body.night-mode .current-period { color: #9b59b6; }
     float: right;
     padding-right: 50px;
 }
+
+/* Media queries pour la responsivité */
 @media only screen and (max-width: 1130px) {
     body {
         padding-top: 100px;
@@ -594,6 +614,7 @@ body.night-mode .current-period { color: #9b59b6; }
     }
 }
 
+/* Styles pour le menu déroulant des fuseaux horaires */
 .select-menu {
     position: fixed;
     top: 59px;
@@ -663,6 +684,7 @@ body.night-mode .current-period { color: #9b59b6; }
     display: block;
 }
 
+/* Styles pour les cases à cocher du menu déroulant */
 .checkbox {
     display: flex;
     align-items: center;
@@ -712,6 +734,7 @@ body.night-mode .current-period { color: #9b59b6; }
     background-color: #e7edfe;
 }
 
+/* Styles pour le conteneur de date */
 .date-container {
     position: absolute;
     bottom:120px;
@@ -753,6 +776,7 @@ body.night-mode .current-period { color: #9b59b6; }
     opacity: 0.9;
 }
 
+/* Styles du conteneur de date selon les modes */
 body.dawn-mode .date-container {
     color: #5d4037;
     background: rgba(255, 255, 255, 0.2);

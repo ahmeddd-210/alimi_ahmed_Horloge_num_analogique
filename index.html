@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
     <link href="style.css" rel="stylesheet">
+    <!-- Importation de Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Barre de navigation principale -->
     <nav class="barre">
         <div class="nav-container">
             <a href="#" class="nav-item active" data-period="current" onclick="showMenu()">🌍 Temps Réel</a>
@@ -16,10 +18,17 @@
             <a href="#" class="nav-item" data-period="dusk" onclick="showMenu()">🌆 Crépuscule</a>
             <a href="#" class="nav-item" data-period="night" onclick="showMenu()">🌙 Nuit</a>
         </div>
+        <!-- Bouton menu pour version mobile -->
         <i class="fa-solid fa-bars" id="menuBtn" onclick="showMenu()"></i>
     </nav>
+    
+    <!-- Affichage de la période actuelle -->
     <div class="current-period" id="currentPeriod">Période actuelle : Jour</div>
+    
+    <!-- Bouton pour activer/désactiver le son -->
     <button class="button" onclick="Sound()">Activer le Son</button>
+    
+    <!-- Menu déroulant pour sélectionner le fuseau horaire -->
     <div class="select-menu">
         <div class="select-region">
             <span class="select-btn">Select Region</span>
@@ -44,18 +53,21 @@
             </li>
         </ul>    
     </div>
+    <!-- Conteneur pour l'affichage de la date -->
     <div class="date-container">
         <span class="mois"></span>
         <span class="jour-semaine"></span>
         <span class="jour-mois"></span>
         <span class="annee"></span>
     </div>
+    <!-- Horloge analogique avec ses aiguilles -->
     <div class="analogique">
         <div class="hour hand" id="hour"></div>
         <div class="minute hand" id="minute"></div>
         <div class="seconds hand" id="seconds"></div>
         <img src="clock template.svg" alt="clock">
     </div>
+    <!-- Horloge numérique -->
     <div class="numerique">
         <div id="hr"></div>
         <span>:</span>
@@ -63,12 +75,14 @@
         <span>:</span>
         <div id="sec"></div>
         <span class="period">AM</span>
-        </div>
+    </div>
+    <!-- Conteneur pour les effets lumineux -->
     <div class="light-effects" id="lightEffects">
         <div class="sun" id="sun"></div>
         <div class="moon" id="moon"></div>
         <div class="stars" id="stars"></div>
     </div>
+    <!-- Liaison avec le fichier JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

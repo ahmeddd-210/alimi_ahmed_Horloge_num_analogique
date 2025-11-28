@@ -5,15 +5,18 @@ tickSound.muted = true;
 const button = document.querySelector(".button");
 const navContainer = document.querySelector(".nav-container");
 
+//Elements pour l'affichage de la date
 const jourSemaine = document.querySelector(".jour-semaine");
 const jourMois = document.querySelector(".jour-mois");
 const mois = document.querySelector(".mois");
 const annee = document.querySelector(".annee");
 
+//fonction pour afficher/masquer le menu de navigation
 function showMenu() {
     navContainer.classList.toggle("active");
 }
 
+//Fonction pour activer/désactiver le son de l'horloge
 function Sound(){
     if(tickSound.muted === false){
         tickSound.muted = true;
@@ -23,37 +26,43 @@ function Sound(){
         button.textContent = "Désactiver le Son";
     }
 }
-      
+
+//Selection des elements pour le menu déroulant des fuseaux horaires
 const selectMenu = document.querySelector(".select-menu");
 const selectBtn = document.querySelector(".select-region");
 const items = document.querySelectorAll(".item");
 
+//Gestion de l'ouverture/fermeture du menu déroulant
 selectBtn.addEventListener("click", () => {
     selectMenu.classList.toggle("open");
     const isExpanded = selectMenu.classList.contains("open");
     selectBtn.setAttribute("aria-expanded", isExpanded);
 });
 
+//Fuseau horaire par défaut
 let selectedTimezone = 'local';
 
+//Elements des aiguilles de l'horloge analogique
 const hourHand = document.getElementById("hour");
 const minuteHand = document.getElementById("minute");
 const secondHand = document.getElementById("seconds");
+//Elements des aiguilles de l'horloge numerique
 const hrDisplay = document.getElementById("hr");
 const minDisplay = document.getElementById("min");
 const secDisplay = document.getElementById("sec");
 const periodDisplay = document.querySelector(".period");
-
+//Elements pour les effets lumineux
 const lightEffects = document.getElementById('lightEffects');
 const sun = document.getElementById('sun');
 const moon = document.getElementById('moon');
 const stars = document.getElementById('stars');
 const body = document.body;
 const currentPeriodDisplay = document.getElementById('currentPeriod');
-
+// Éléments de navigation et mode manuel
 const navItems = document.querySelectorAll('.nav-item');
 let manualMode = false;
 
+// Fonction pour créer les étoiles animées
 function createStars() {
     stars.innerHTML = '';
     for (let i = 0; i < 100; i++) {
@@ -68,6 +77,7 @@ function createStars() {
     }
 }
 
+// Configuration de la navigation entre les périodes de la journée
 function setupNavigation() {
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -89,6 +99,7 @@ function setupNavigation() {
     });
 }
 
+// Simulation d'une période spécifique de la journée
 function simulatePeriod(period) {
     let hours;
     let periodName;
@@ -116,6 +127,7 @@ function simulatePeriod(period) {
     currentPeriodDisplay.textContent = `Mode Simulation : ${periodName}`;
 }
 
+// Application des effets visuels selon l'heure
 function applyLightEffects(hours) {
     body.classList.remove('dawn-mode', 'day-mode', 'dusk-mode', 'night-mode');
     
@@ -181,6 +193,7 @@ function applyLightEffects(hours) {
     }
 }
 
+// Obtention de l'heure selon le fuseau horaire sélectionné
 function getTimeForTimezone(timezone) {
     if (timezone === 'local') {
         return new Date();
@@ -189,7 +202,7 @@ function getTimeForTimezone(timezone) {
     }
 }
 
-
+// Mise à jour de l'affichage de la date
 function updateDateDisplay() {
     let now = getTimeForTimezone(selectedTimezone);
     
@@ -214,6 +227,7 @@ function updateDateDisplay() {
     annee.textContent = anneeValue;
 }
 
+// Mise à jour de l'horloge (analogique et numérique)
 function updateClock() {
     let now = getTimeForTimezone(selectedTimezone);
     let hours = now.getHours();
@@ -246,6 +260,7 @@ function updateClock() {
     }
 }
 
+// Initialisation du menu déroulant des fuseaux horaires
 document.addEventListener('DOMContentLoaded', function() {
     const selectBtn = document.querySelector('.select-btn');
     const fleche = document.getElementById('fleche');
@@ -297,6 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
     localCheckbox.className = 'fa-solid fa-square-check';
 });
 
+// Fonction d'initialisation de l'application
 function init() {
     createStars();
     setupNavigation();
